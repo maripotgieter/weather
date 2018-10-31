@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Weather App </title>
+</head>
+
+<body>
+
+    <div id="main">
+        <input type="text" placeholder="Search for City..." v-model="input" v-on:keyup.enter="getData(input)" autocomplete="off">
+        
+        <div v-if="seen">{{ cityName }}</div>
+        <div v-if="seen">{{ mainWeather }} {{ currentTemperature }}</div>
+        
+        <div v-for="moment in today">
+        <div >{{ moment.weather[0].description }}</div> <div> {{ Math.round(moment.main.temp - 273) }} </div><div>{{ moment.dt_txt.slice(11 , 16) }}</div></div>
+        
+        
+        
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+    
+    
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
